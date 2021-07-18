@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { ChakraProvider, extendTheme, ColorModeScript } from '@chakra-ui/react';
+
+const config = {
+  initialColorMode: 'dark',
+  useSystemColorMode: false
+}
 
 const theme = extendTheme({
+  config,
   components: {
     Link: {
       variants: {
@@ -29,6 +35,7 @@ const theme = extendTheme({
 
 ReactDOM.render(
   <ChakraProvider theme={theme}>
+    <ColorModeScript initialColorMode={theme.config.initialColorMode} />
     <App />
   </ChakraProvider>,
   document.getElementById('root')

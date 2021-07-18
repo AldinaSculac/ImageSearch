@@ -7,7 +7,7 @@ const Navbar = (props) => {
   const {title} = props;
   return (
     <VStack
-      bgColor="cyan.700"
+      bgGradient="linear(to-r, gray.800, cyan.700)"
       alignItems="stretch"
       p="4"
       boxShadow="md"
