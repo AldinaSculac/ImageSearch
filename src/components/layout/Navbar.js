@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { VStack, HStack, Text, Spacer, Link as ChakraLink} from '@chakra-ui/react';
-import {NavLink, Link } from 'react-router-dom';
+import {NavLink } from 'react-router-dom';
 
 const Navbar = (props) => {
   const {title} = props;
   return (
     <VStack
-      bgGradient="linear(to-r, gray.800, cyan.700)"
+      bgGradient="linear(to-r, gray.800, gray.900, red.900)"
       alignItems="stretch"
       p="4"
       boxShadow="md"
