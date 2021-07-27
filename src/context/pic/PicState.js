@@ -5,10 +5,10 @@ import PicReducer from './picReducer';
 
 import {
   SEARCH_PICS,
-  SET_LOADING,
-  CLEAR_PICS,
   GET_PIC,
-  GET_REPOS
+  GET_REPOS,
+  CLEAR_PICS,
+  SET_LOADING,
 } from '../types';
 
 
@@ -21,6 +21,23 @@ const PicState = props => {
   }
 
   const [state, dispatch] = useReducer(PicReducer, initialState);
+
+  // Search Pics
+  const searchPics = async term => {
+    setLoading();
+
+    const response = await unsplashApi.get(`/search/photos`,{
+      params: {
+        query: term
+      }
+    });
+
+    dispatch({
+      type: SEARCH_PICS,
+      payload: response.data.results
+    });
+  };
+
 
   // Clear Pics
   const clearPics = () => dispatch({type: CLEAR_PICS})
@@ -35,6 +52,7 @@ const PicState = props => {
       pic: state.pic,
       repos: state.repos,
       loading: state.loading,
+      searchPics,
       clearPics,
       setLoading
     }}

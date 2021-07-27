@@ -8,6 +8,12 @@ import {
 
 export default (state, action) => {
   switch (action.type) {
+    case SEARCH_PICS:
+      return {
+        ...state, 
+        pics: action.payload, 
+        loading: false
+      };
     default:
       return state;
   }
