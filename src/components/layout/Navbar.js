@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { VStack, HStack, Text, Spacer, Link as ChakraLink} from '@chakra-ui/react';
+import { VStack, HStack, Text, Spacer} from '@chakra-ui/react';
 import {NavLink } from 'react-router-dom';
 
 const Navbar = (props) => {
@@ -21,29 +21,30 @@ const Navbar = (props) => {
           <NavLink to='/'>{title}</NavLink>
         </Text>
         <Spacer />
-        <ChakraLink
-          pr={4}
+        <NavLink 
+          to='/'
+          exact={true}
+          activeStyle={{
+            fontWeight: "bold",
+            letterSpacing: 1.5
+          }}
+          style={{
+            textTransform:'uppercase',
+            marginRight: 20,
+          }}
         >
-          <NavLink 
-            to='/'
-            exact={true}
-            activeStyle={{
-              fontWeight: "bold",
-            }}
-          >
-            Home</NavLink>
-        </ChakraLink>
-        <ChakraLink
-          pr={4}
+          Home</NavLink>
+        <NavLink 
+          to='/about'
+          activeStyle={{
+            fontWeight: "bold",
+            letterSpacing: 1.5
+          }}
+          style={{
+            textTransform:'uppercase',
+          }}
         >
-          <NavLink 
-            to='/about'
-            activeStyle={{
-              fontWeight: "bold",
-            }}
-          >
-            About</NavLink>
-        </ChakraLink>
+          About</NavLink>
       </HStack>
     </VStack>
   )
