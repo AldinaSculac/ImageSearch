@@ -4,19 +4,24 @@ import Navbar from './components/layout/Navbar';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 
+import PicState from './context/pic/PicState';
+
 const App = () => {
   return (
-    <Router>
-      <div>
-        <Navbar title="Pics App" />
+    <PicState>
+      <Router>
         <div>
-          <Switch>
-            <Route exact path="/" render={Home} />
-            <Route exact path="/about" component={About} />
-          </Switch>
+          <Navbar title="Pics App" />
+          <div>
+            <Switch>
+              <Route exact path="/" render={Home} />
+              <Route exact path="/about" component={About} />
+            </Switch>
+          </div>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </PicState>
+    
   );
 }
 
