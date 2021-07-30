@@ -20,6 +20,11 @@ export default (state, action) => {
         pics: [],
         loading: false
       }
+    case SET_LOADING:
+      return {
+        ...state,
+        loading: true
+      }
     default:
       return state;
   }

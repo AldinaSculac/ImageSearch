@@ -2,9 +2,6 @@ import React, { useState, useContext } from 'react';
 import PicContext from '../../context/pic/picContext';
 import {
   FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
   Input,
   InputGroup,
   InputLeftElement,
