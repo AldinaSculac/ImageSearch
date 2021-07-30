@@ -21,7 +21,13 @@ const PicItem = (props) => {
   }
 
   return (
-      <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+      <Box 
+      maxW="sm" 
+      borderWidth="1px" 
+      borderRadius="lg" 
+      overflow="hidden"
+      width={{ base: "100%", sm: "100%", md: "100%" }}
+      >
       <Image src={pic.urls.regular} alt={pic.urls.regular} />
 
       <Box p="6">
