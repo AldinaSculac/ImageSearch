@@ -9,7 +9,16 @@ import PicList from '../pics/PicList';
 const Home = () => {
 
   return (
-    <VStack>
+    <div>
+      Home
+    </div>
+  )
+}
+
+export default Home;
+
+/*
+<VStack>
       <Container maxW="container.md" m={6} >
         <Search />
       </Container>
@@ -17,7 +26,4 @@ const Home = () => {
         <PicList />
       </Container>
     </VStack>
-  )
-}
-
-export default Home;
+*/

@@ -1,52 +1,67 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { VStack, HStack, Text, Spacer} from '@chakra-ui/react';
 import {NavLink } from 'react-router-dom';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  title: {
+    flexGrow: 1,
+    display: 'none',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block',
+    },
+  },
+  link: {
+    textTransform:'uppercase',
+    marginRight: 20,
+    color:'white',
+    textDecoration: 'none',
+    fontFamily:'Roboto',
+    color: '#FFFFFF90'
+  },
+}));
 
 const Navbar = (props) => {
   const {title} = props;
+  const classes = useStyles();
   return (
-    <VStack
-      bgGradient="linear(to-r, gray.800, gray.900, red.900)"
-      alignItems="stretch"
-      p="4"
-      boxShadow="md"
-    >
-      <HStack >
-        <Text
-          color="whiteAlpha.800"
-          fontSize="2xl"
-          fontWeight="medium"
-        >
-          <NavLink to='/'>{title}</NavLink>
-        </Text>
-        <Spacer />
-        <NavLink 
-          to='/'
-          exact={true}
-          activeStyle={{
-            fontWeight: "bold",
-            letterSpacing: 1.5
-          }}
-          style={{
-            textTransform:'uppercase',
-            marginRight: 20,
-          }}
-        >
-          Home</NavLink>
-        <NavLink 
-          to='/about'
-          activeStyle={{
-            fontWeight: "bold",
-            letterSpacing: 1.5
-          }}
-          style={{
-            textTransform:'uppercase',
-          }}
-        >
-          About</NavLink>
-      </HStack>
-    </VStack>
+    <AppBar position="static" color="inherit">
+        <Toolbar>
+          <Typography className={classes.title} variant="h6" noWrap>
+            {title}
+          </Typography>
+          <NavLink 
+            to='/'
+            exact={true}
+            activeStyle={{
+              fontWeight: "bold",
+              letterSpacing: 1.5,
+              color: '#FFFFFF'
+            }}
+            className={classes.link}
+          >
+            Home
+          </NavLink>
+
+          <NavLink 
+            to='/about'
+            activeStyle={{
+              fontWeight: "bold",
+              letterSpacing: 1.5,
+              color: '#FFFFFF'
+            }}
+            className={classes.link}
+          >
+            About
+          </NavLink>
+        </Toolbar>
+      </AppBar>
   )
 }
 

@@ -5,7 +5,14 @@ import {ChevronRightIcon} from '@chakra-ui/icons';
 
 const About = () => {
   return (
-    <Center w="100%">
+    <div>About</div>
+  )
+}
+
+export default About;
+
+/*
+<Center w="100%">
       <Box 
         m={5}
         maxW="lg" 
@@ -54,7 +61,4 @@ const About = () => {
         </List>
       </Box>
     </Center>
-  )
-}
-
-export default About;
+    */
