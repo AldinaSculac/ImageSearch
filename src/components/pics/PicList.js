@@ -1,37 +1,27 @@
 import React, { useContext } from 'react';
 import PicContext from '../../context/pic/picContext';
+import {Grid, CircularProgress } from '@material-ui/core';
 import PicItem from './PicItem';
-import { Spinner } from "@chakra-ui/react";
-import {
-  Container,
-  VStack,
-  Grid, 
-} from "@chakra-ui/react";
 
 const PicList = () => {
   const {pics, loading} = useContext(PicContext);
 
   if (loading) {
-    return (<VStack>
-      <Container maxW="container.md" m='20%' centerContent={true}>
-        <Spinner
-          thickness="4px"
-          speed="0.65s"
-          emptyColor="whiteAlpha.400"
-          color="red.900"
-          size="xl"
-        />
-      </Container>
-    </VStack>);
+    return (<div style={{ padding: '10%' }}>
+              <Grid container 
+                  alignItems="center" 
+                  justifyContent="center"
+                >
+                <CircularProgress color="primary" />
+              </Grid>
+            </div>);
   } else {
     return (
-      <Grid
-        templateColumns="repeat(3, 1fr)" gap={6}
-      >
-        {pics.map(pic => (
+        <Grid container>
+          {pics.map(pic => (
           <PicItem key={pic.id} pic={pic} />
         ))}
-      </Grid>
+        </Grid>
     );
   }
 }
