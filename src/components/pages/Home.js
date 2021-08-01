@@ -1,29 +1,25 @@
 import React from 'react';
 import Search from '../pics/Search';
-import {
-  Container,
-  VStack
-} from "@chakra-ui/react";
+import {Grid} from '@material-ui/core';
 import PicList from '../pics/PicList';
 
 const Home = () => {
 
   return (
-    <div>
-      Home
-    </div>
+    <Grid 
+      item 
+      container 
+      //alignItems="center" 
+      //justifyContent="center"
+    >
+      <Grid xs={false} sm={2} item />
+      <Grid xs={12} sm={8} item >
+        <Search />
+        <PicList />
+      </Grid>
+      <Grid xs={false} sm={2} item />
+    </Grid>
   )
 }
 
 export default Home;
-
-/*
-<VStack>
-      <Container maxW="container.md" m={6} >
-        <Search />
-      </Container>
-      <Container maxW="container.xl" m={6} centerContent>
-        <PicList />
-      </Container>
-    </VStack>
-*/
