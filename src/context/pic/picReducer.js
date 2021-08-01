@@ -3,7 +3,9 @@ import {
   SET_LOADING,
   CLEAR_PICS,
   //GET_PIC,
-  //GET_REPOS
+  //GET_REPOS,
+  CLEAR_NO_PICS,
+  SET_NO_PICS
 } from '../types';
 
 export default (state, action) => {
@@ -25,6 +27,16 @@ export default (state, action) => {
         ...state,
         loading: true
       }
+    case SET_NO_PICS:
+      return {
+        ...state,
+        alertMsg: action.payload
+      };
+    case CLEAR_NO_PICS:
+      return {
+        ...state,
+        alertMsg: ''
+      };;
     default:
       return state;
   }
