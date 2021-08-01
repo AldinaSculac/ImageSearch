@@ -5,8 +5,8 @@ import PicReducer from './picReducer';
 
 import {
   SEARCH_PICS,
-  GET_PIC,
-  GET_REPOS,
+  //GET_PIC,
+  //GET_REPOS,
   CLEAR_PICS,
   SET_LOADING,
 } from '../types';

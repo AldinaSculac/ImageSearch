@@ -20,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
   link: {
     textTransform:'uppercase',
     marginRight: 20,
-    color:'white',
     textDecoration: 'none',
     fontFamily:'Roboto',
     color: '#FFFFFF90'
