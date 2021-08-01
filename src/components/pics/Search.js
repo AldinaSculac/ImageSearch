@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Search = () => {
   const classes = useStyles();
-  const {searchPics, clearPics, pics, alertMsg} = useContext(PicContext);
+  const {searchPics, clearPics, pics} = useContext(PicContext);
 
   const [term, setTerm] = useState('');
   const [isError, setIsError] = useState(false);
@@ -46,7 +46,6 @@ const Search = () => {
     }
   }
 
-  console.log(alertMsg);
   return (
     <form 
       className={classes.root} 

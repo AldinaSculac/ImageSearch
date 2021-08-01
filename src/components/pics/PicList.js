@@ -1,12 +1,10 @@
 import React, { useContext } from 'react';
 import PicContext from '../../context/pic/picContext';
-import AlertContext from '../../context/pic/picContext';
-import {Grid, CircularProgress } from '@material-ui/core';
+import {Grid, CircularProgress, Typography } from '@material-ui/core';
 import PicItem from './PicItem';
 
 const PicList = () => {
-  const {pics, loading} = useContext(PicContext);
-  const {setAlert} = useContext(AlertContext);
+  const {pics, loading, alertMsg} = useContext(PicContext);
 
   if (loading) {
     return (
@@ -20,10 +18,13 @@ const PicList = () => {
       </div>);
   } else {
     return (
-      <Grid container>
-        {pics.map(pic => (
+      <Grid container justifyContent="center">
+        {alertMsg ? <Typography>{alertMsg}</Typography>
+        :
+        pics.map(pic => (
           <PicItem key={pic.id} pic={pic} />
-        ))}
+        ))
+        }
       </Grid>
     );
   }
