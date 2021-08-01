@@ -1,14 +1,12 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import {Grid, Paper} from '@material-ui/core';
-import {ThemeProvider} from '@material-ui/core/styles';
+import {Grid, Paper, ThemeProvider} from '@material-ui/core';
 import theme from './theme';
 
 import Navbar from './components/layout/Navbar';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 import PicState from './context/pic/PicState';
-
 
 const App = () => {
   return (

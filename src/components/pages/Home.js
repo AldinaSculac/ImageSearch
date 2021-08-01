@@ -1,6 +1,6 @@
 import React from 'react';
-import Search from '../pics/Search';
 import {Grid} from '@material-ui/core';
+import Search from '../pics/Search';
 import PicList from '../pics/PicList';
 
 const Home = () => {

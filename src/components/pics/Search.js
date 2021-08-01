@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react';
 import PicContext from '../../context/pic/picContext';
-import { makeStyles } from '@material-ui/core/styles';
-import {TextField } from '@material-ui/core';
+import {TextField, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,8 +31,6 @@ const Search = () => {
       setIsError(false);
     }
   }
-
-  console.log(pics);
 
   return (
     <form 
