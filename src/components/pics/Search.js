@@ -84,15 +84,3 @@ const Search = () => {
 }
 
 export default Search;
-/*
-<TextField 
-        fullWidth
-        id="standard-basic" 
-        label="Search For Image" 
-        error={isError}
-        value = {term}
-        onChange={(e) => setTerm(e.target.value)}
-        className={classes.inputField}
-      />
-      <p>Clean</p>
-      */
