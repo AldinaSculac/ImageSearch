@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
   margin: {
     margin: theme.spacing(1),
   },
+  clearIcon: {
+    fontSize:20
+  }
 }));
 
 const Search = () => {
@@ -63,11 +66,14 @@ const Search = () => {
             <InputAdornment position="end">
               <Icon 
                 aria-label="clean search field"
-                style={{cursor:'pointer'}}
+                style={{cursor: term ? 'pointer' : 'auto'}}
                 fontSize="small"
                 onClick={clearBtn}
               >
-                {term ? <CloseIcon /> : null}
+                {term ? <CloseIcon 
+                color="primary" 
+                className={classes.clearIcon}
+                /> : null}
               </Icon>
             </InputAdornment>
           ),
