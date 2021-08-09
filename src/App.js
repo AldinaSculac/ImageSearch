@@ -9,28 +9,31 @@ import About from './components/pages/About';
 
 import PicState from './context/pic/PicState';
 import AlertState from './context/alert/AlertState';
+import FavoriteState from './context/favorite/FavoriteState';
 
 const App = () => {
   return (
     <PicState>
       <AlertState>
-        <Router>
-          <ThemeProvider theme={theme} >
-            <Paper elevation={0} square={true} style={{minHeight: '100vh'}}>
-              <Grid container direction="column">
-                <Grid item>
-                  <Navbar title="Pics App" />
+        <FavoriteState>
+          <Router>
+            <ThemeProvider theme={theme} >
+              <Paper elevation={0} square={true} style={{minHeight: '100vh'}}>
+                <Grid container direction="column">
+                  <Grid item>
+                    <Navbar title="Pics App" />
+                  </Grid>
+                  <Grid item container>
+                    <Switch>
+                      <Route exact path="/" render={Home} />
+                      <Route exact path="/about" component={About} />
+                    </Switch>
+                  </Grid>
                 </Grid>
-                <Grid item container>
-                  <Switch>
-                    <Route exact path="/" render={Home} />
-                    <Route exact path="/about" component={About} />
-                  </Switch>
-                </Grid>
-              </Grid>
-            </Paper>
-        </ThemeProvider>
-        </Router>
+              </Paper>
+          </ThemeProvider>
+          </Router>
+        </FavoriteState>
       </AlertState>
     </PicState>
   );
