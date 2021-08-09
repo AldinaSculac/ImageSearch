@@ -8,7 +8,7 @@ export default (state, action) => {
     case GET_FAVORITE_PIC:
       return state;
     case SET_FAVORITE_PIC:
-      return state;
+      return [...state, action.payload];
     default:
       return state;
   }
