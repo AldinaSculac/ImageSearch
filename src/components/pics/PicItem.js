@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Grid,
@@ -12,6 +12,7 @@ import {
 } from '@material-ui/core';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import LinkIcon from '@material-ui/icons/Link';
+import FavoriteContext from '../../context/favorite/favoriteContext';
 
 
 const useStyles = makeStyles({
@@ -34,7 +35,10 @@ const useStyles = makeStyles({
   },
   likeIcon: {
     color: '#d46ab5'
-  }
+  },
+  favIcon:{
+    color: '#d46ab5'
+  },
 });
 
 
@@ -42,6 +46,20 @@ const PicItem = (props) => {
 
   const {pic} = props;
   const classes = useStyles();
+  const { favorites, setFavorite } = useContext(FavoriteContext);
+
+  console.log(favorites);
+
+  const favoriteItem = (id) => {
+    const isFav = favorites.find(fav => fav === id);
+    if (isFav){
+      return (<FavoriteIcon 
+              className={classes.favIcon}
+            />)
+    } else {
+      return <FavoriteIcon />
+    }
+  }
 
   return (
       <Grid item xs={12} sm={6} md={4}>
@@ -64,11 +82,9 @@ const PicItem = (props) => {
             <LinkIcon />
           </IconButton>
           <IconButton aria-label="add to favorites" className={classes.icon} 
-          //onClick={() => setLiked(!liked)}
+          onClick={() => setFavorite(pic.id)}
           >
-            <FavoriteIcon 
-            //className={liked ? classes.likeIcon : ''}
-            />
+            {favoriteItem(pic.id)}
           </IconButton>
         </CardActions>
       </Card>

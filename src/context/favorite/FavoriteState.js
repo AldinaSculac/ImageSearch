@@ -32,7 +32,6 @@ const FavoriteState = props => {
   <FavoriteContext.Provider
     value={{
       favorites: state,
-      //getFavorite,
       setFavorite
     }}
   >
