@@ -3,7 +3,6 @@ import FavoriteContext from './favoriteContext';
 import FavoriteReducer from './favoriteReducer';
 
 import {
-  GET_FAVORITE_PIC,
   SET_FAVORITE_PIC
 } from '../types';
 
@@ -21,12 +20,6 @@ const FavoriteState = props => {
     localStorage.setItem('favorites', JSON.stringify(state))
   }, [state])
 
-  /*
-  // Get Favorites
-  const getFavorite = () => {
-    return null;
-  }
-  */
   // Set Favorites
   const setFavorite = (id) => {
     dispatch({
